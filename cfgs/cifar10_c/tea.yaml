@@ -1,0 +1,39 @@
+MODEL:
+  ADAPTATION: tea
+  ARCH: Standard
+TEST:
+  BATCH_SIZE: 200
+CORRUPTION:
+  DATASET: cifar10_c
+  SEVERITY:
+    - 5
+  TYPE:
+    - gaussian_noise
+    - shot_noise
+    - impulse_noise
+    - defocus_blur
+    - glass_blur
+    - motion_blur
+    - zoom_blur
+    - snow
+    - frost
+    - fog
+    - brightness
+    - contrast
+    - elastic_transform
+    - pixelate
+    - jpeg_compression
+OPTIM:
+  METHOD: Adam
+  STEPS: 1
+  BETA: 0.9
+  LR: 1e-3
+  WD: 0.
+
+# ENERGY:
+#   SGLD_STEPS: 20
+#   SGLD_LR: 1.0
+#   SGLD_STD: 0.01
+#   REINIT_FREQ: 0.05
+#   BUFFER_SIZE: 10000
+#   IF_COND: False # Set to True for conditional energy modeling
